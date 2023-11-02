@@ -17,27 +17,27 @@
         "Ingredientes": [
             {
                 "Nombre" : "Pepperoni",
-                "Precio" : "1"
+                "Precio" : "2"
             },
             {
                 "Nombre" : "Bacon",
-                "Precio" : "1"
+                "Precio" : "2"
             },
             {
                 "Nombre" : "Piña",
-                "Precio" : "1"
+                "Precio" : "5"
             },
             {
                 "Nombre" : "Anchoas",
-                "Precio" : "1"
+                "Precio" : "4"
             },
             {
                 "Nombre" : "Huevo",
-                "Precio" : "1"
+                "Precio" : "3"
             },
             {
                 "Nombre" : "Pollo",
-                "Precio" : "1"
+                "Precio" : "3"
             }
         ]
     }
