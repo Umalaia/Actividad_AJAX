@@ -1,5 +1,50 @@
 //FUNCIONES
 
+//Función de petición asincrona
+const URL_DESTINO = "http://localhost:5500/"
+const RECURSO = "index.json"
+
+    function enviarPeticionAsincrona() {
+        let xmlHttp = new XMLHttpRequest()
+        xmlHttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                if (this.status == 200) {
+                    procesarRespuesta(this.responseText)
+                } else {
+                    alert("Error")
+                }
+            }
+        }
+        xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
+        xmlHttp.send(null)
+    }
+
+
+//Insertar datos modificando el DOM
+let label = document.createElement("label")
+    label.for = "tamaño"
+    label.id = "tamaño"
+let labelCont = document.createTextNode("Elige tu tamaño :")    
+    label.appendChild(labelCont)
+
+for (let tamaño of tamaños){
+    let labelTam = document.createElement("label")
+    let labelContTam = docuemnt.createTextNode(tam.value)
+    labelTam.appendChild(labelContTam)
+    label.appendChild(labelCont)
+    let inputTam = document.createElement("input")
+    inputTam.name = "tamaño"
+    inputTam.id = tam.value
+    inputTam.type = "radio"
+}
+
+let form = document.getElementById("formulario")
+form.appendChild(label)
+form.appendChild(labelTam)
+
+
+
+
 //funcion validar si tamaño esta checked
 function pizzaChecked() {
     tamañoPizza = document.getElementsByName("tamaño");
@@ -71,32 +116,7 @@ function calcPrecioIngrediente() {
     }
 }
 
-/* funcion comprobar que los campos nombre, direccion, telefono y email esten rellenos
-   y si no, mostrar una alerta dependiendo del campo que no lo esté */
-function comprobarDatos(){
-    console.log("entro")
-     n = (nombre.value == "")
-     d = (direccion.value == "")
-     t = (telefono.value == "")
-     e = (email.value == "")
-    if (n){
-        alert("Inserta el nombre")
-    }
-    if (d){
-        alert("Inserta la direccion")
-    }
-    if (t){
-        alert("Inserta el telefono")
-    }
-    if (e){
-        alert("Inserta el email")
-    }
-    if(n == true || d == true || t == true || e == true){
-        return false
-    }
-    else
-        return true
-}
+
 
 //funcion procesar el pedido
 function procesarPedido() {
