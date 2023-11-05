@@ -19,8 +19,19 @@ const RECURSO = "index.json"
         xmlHttp.send(null)
     }
 
+//Convertir texto a JSON
+function procesarRespuesta(jsonDoc) {
+    var objetoJson = JSON.parse(jsonDoc)
+    console.log(objetoJson)
+}
+
 
 //Insertar datos modificando el DOM
+var div = document.createElement("div");
+div.id = "div"
+formulario.appendChild(div)
+
+
 let label = document.createElement("label")
     label.for = "tamaño"
     label.id = "tamaño"
@@ -38,9 +49,10 @@ for (let tamaño of tamaños){
     inputTam.type = "radio"
 }
 
-let form = document.getElementById("formulario")
-form.appendChild(label)
-form.appendChild(labelTam)
+div.appendChild(label)
+div.appendChild(labelTam)
+
+
 
 
 
