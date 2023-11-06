@@ -1,58 +1,58 @@
+window.onload = (enviarPeticionAsincrona);
 //FUNCIONES
 
 //Función de petición asincrona
 const URL_DESTINO = "http://localhost:5500/"
 const RECURSO = "index.json"
 
-    function enviarPeticionAsincrona() {
-        let xmlHttp = new XMLHttpRequest()
-        xmlHttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                if (this.status == 200) {
-                    procesarRespuesta(this.responseText)
-                } else {
-                    alert("Error")
-                }
+function enviarPeticionAsincrona() {
+    let xmlHttp = new XMLHttpRequest()
+    xmlHttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if (this.status == 200) {
+                procesarRespuesta(this.responseText)
+            } else {
+                alert("Error")
             }
         }
-        xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
-        xmlHttp.send(null)
     }
+    xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
+    xmlHttp.send(null)
+}
 
 //Convertir texto a JSON
 function procesarRespuesta(jsonDoc) {
     var objetoJson = JSON.parse(jsonDoc)
+    var tamaños = objetoJson.pizzeria.tamaños;
+    var ingredientes = objetoJson.pizzeria.ingredientes;
     console.log(objetoJson)
-}
+    console.log(tamaños)
 
 
-//Insertar datos modificando el DOM
-var div = document.createElement("div");
-div.id = "div"
-formulario.appendChild(div)
+    //Insertar datos modificando el DOM
 
-
-let label = document.createElement("label")
-    label.for = "tamaño"
-    label.id = "tamaño"
-let labelCont = document.createTextNode("Elige tu tamaño :")    
+    let label = document.createElement("label")
+    label.for = "tam"
+    label.id = "tam"
+    let labelCont = document.createTextNode("Elige tu tamaño :")
     label.appendChild(labelCont)
+    div.appendChild(label)
 
-for (let tamaño of tamaños){
-    let labelTam = document.createElement("label")
-    let labelContTam = docuemnt.createTextNode(tam.value)
-    labelTam.appendChild(labelContTam)
-    label.appendChild(labelCont)
-    let inputTam = document.createElement("input")
-    inputTam.name = "tamaño"
-    inputTam.id = tam.value
-    inputTam.type = "radio"
+    for (let tamaño of tamaños) {
+        let labelTam = document.createElement("label")
+        let labelContTam = document.createTextNode(tamaño.tam)
+        labelTam.appendChild(labelContTam)
+        let inputTam = document.createElement("input")
+        inputTam.type="radio"
+        inputTam.name = tamaño.name
+        inputTam.id = tamaño.tam
+        inputTam.value = tamaño.value
+        console.log(tamaños)
+        div.appendChild(labelTam)
+        div.appendChild(inputTam)
+    }
+   
 }
-
-div.appendChild(label)
-div.appendChild(labelTam)
-
-
 
 
 
@@ -109,18 +109,18 @@ function calcPrecioTam() {
 //funcion calcular precio ingredientes
 function calcPrecioIngrediente() {
     let contador = 0
-    
-    if(ingreChecked()){
-        if (bacon.checked){
+
+    if (ingreChecked()) {
+        if (bacon.checked) {
             contador++
         }
-        if (carne.checked){
+        if (carne.checked) {
             contador++
         }
-        if (pollo.checked){
+        if (pollo.checked) {
             contador++
         }
-        if (peperoni.checked){
+        if (peperoni.checked) {
             contador++
         }
         let precioIngredientes = contador++
@@ -132,25 +132,24 @@ function calcPrecioIngrediente() {
 
 //funcion procesar el pedido
 function procesarPedido() {
-    
+
 
     let precioTamPizza = 0
     precioTamPizza = calcPrecioTam();
     let precioIngre = 0
     precioIngre = calcPrecioIngrediente();
-    
 
-    if (comprobarDatos() == true){
-    precio.parentNode.removeChild(precio)
-    let precioTotal = document.createTextNode("Precio total: " + (precioTamPizza+precioIngre) + " €")
-    let nuevoPrecio = document.createElement("p")
-    nuevoPrecio.appendChild(precioTotal)
-    nuevoPrecio.id = "precio"
-    formulario.appendChild(nuevoPrecio)
+
+    if (comprobarDatos() == true) {
+        precio.parentNode.removeChild(precio)
+        let precioTotal = document.createTextNode("Precio total: " + (precioTamPizza + precioIngre) + " €")
+        let nuevoPrecio = document.createElement("p")
+        nuevoPrecio.appendChild(precioTotal)
+        nuevoPrecio.id = "precio"
+        formulario.appendChild(nuevoPrecio)
+    } else {
+        precio.style.display = "none"
+
     }
-    else{
-    precio.style.display = "none"
-    
-    }
-    
+
 }
