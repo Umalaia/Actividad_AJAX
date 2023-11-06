@@ -131,24 +131,27 @@ function calcPrecioIngrediente() {
     
     if(ingreChecked()){
         if (bacon.checked){
-            parseInt(bacon.value)+contador
+            contador += parseInt(bacon.value)
+            
         }
         if (quesos.checked){
-            contador++
+            contador += parseInt(quesos.value)
+ 
         }
         if (champi.checked){
-            contador++
+            contador += parseInt(champi.value)
         }
         if (cebolla.checked){
-            contador++
+            contador += parseInt(cebolla.value)
         }
         if (pollo.checked){
-            contador++
+            contador += parseInt(pollo.value)
         }
         if (carne.checked){
-            contador++
+            contador += parseInt(carne.value)
         }
-        let precioIngredientes = contador++
+       
+        let precioIngredientes = contador
         return precioIngredientes;
     }
 }

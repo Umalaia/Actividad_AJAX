@@ -28,32 +28,32 @@
             "ingredientes": [
                 {
                     "id": "bacon",
-                    "nombre": "Bacon",
+                    "nombre": "Bacon +2€",
                     "value": "2"
                 },
                 {
                     "id": "quesos",
-                    "nombre": "4 Quesos",
+                    "nombre": "4 Quesos +2€",
                     "value": "2"
                 },
                 {
                     "id": "champi",
-                    "nombre": "Champiñones",
+                    "nombre": "Champiñones +1€",
                     "value": "1"
                 },
                 {
                     "id": "cebolla",
-                    "nombre": "Cebolla",
-                    "value": "0.5"
+                    "nombre": "Cebolla +1€",
+                    "value": "1"
                 },
                 {
                     "id": "pollo",
-                    "nombre": "Pollo",
+                    "nombre": "Pollo +2€",
                     "value": "2"
                 },
                 {
                     "id": "carne",
-                    "nombre": "Carne",
+                    "nombre": "Carne +2€",
                     "value": "2"
                 }
             ]
