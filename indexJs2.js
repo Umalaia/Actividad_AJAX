@@ -21,6 +21,7 @@ function enviarPeticionAsincrona() {
 }
 
 //Convertir texto a JSON
+
 function procesarRespuesta(jsonDoc) {
     var objetoJson = JSON.parse(jsonDoc)
     var tamaños = objetoJson.pizzeria.tamaños;
@@ -205,6 +206,14 @@ function procesarPedido() {
         precio.style.display = "none"
 
     }
+
+}
+
+function refresca(){
+    let refresh = document.getElementById("refrescar");
+    refresh.addEventListener('click', _ => {
+                location.reload();
+    })
 
 }
 
