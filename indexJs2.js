@@ -38,11 +38,11 @@ function procesarRespuesta(jsonDoc) {
     for (let tamaño of tamaños) {
         let labelTam = document.createElement("label")
         labelTam.id = "tam"
-        let labelContTam = document.createTextNode(tamaño.tam)
+        let labelContTam = document.createTextNode(tamaño.nombre)
         labelTam.appendChild(labelContTam)
         let inputTam = document.createElement("input")
         inputTam.type="radio"
-        inputTam.name = tamaño.name
+        inputTam.name = "tamaño"
         inputTam.id = tamaño.tam
         inputTam.value = tamaño.value
         div.appendChild(labelTam)
@@ -61,22 +61,14 @@ function procesarRespuesta(jsonDoc) {
         let labelContIngre = document.createTextNode(ingrediente.nombre)
         labelIngre.appendChild(labelContIngre)
         let inputIngre = document.createElement("input")
-        inputIngre.name = ingrediente.nombre
+        inputIngre.name = "ingrediente"
         inputIngre.type = "checkbox"
-        inputIngre.id = ingrediente.nombre
+        inputIngre.id = ingrediente.id
         inputIngre.value = ingrediente.precio
         inputIngre.style.marginRight = "28px";
         div.appendChild(labelIngre)
         div.appendChild(inputIngre)
     }
-
-    
-
-
-
-
-
-}
 
 
 
@@ -99,13 +91,6 @@ function pizzaChecked() {
 }
 
 
-
-
-
-
-
-
-/**
 //funcion validar si ingrediente esta checked
 function ingreChecked() {
     ingrePizza = document.getElementsByName("ingrediente");
@@ -142,24 +127,16 @@ function calcPrecioTam() {
 //funcion calcular precio ingredientes
 function calcPrecioIngrediente() {
     let contador = 0
-
-    if (ingreChecked()) {
-        if (bacon.checked) {
-            contador++
-        }
-        if (carne.checked) {
-            contador++
-        }
-        if (pollo.checked) {
-            contador++
-        }
-        if (peperoni.checked) {
-            contador++
-        }
-        let precioIngredientes = contador++
-        return precioIngredientes;
+    if(ingreChecked()){
+    for (let ingre of ingredientes){
+        let ingreChecked = document.getElementById(ingre.id)
+        contador += ingreChecked.value
+        console.log(contador)
+    }
+        return contador
     }
 }
+
 
 
 
@@ -186,4 +163,5 @@ function procesarPedido() {
     }
 
 }
-*/
+
+}

@@ -3,19 +3,22 @@
         {
             "tamaños": [
                 {
-                    "tam": "Pequeña",
+                    "nombre": "Pequeña 5€",
+                    "tam": "pequeña",
                     "precio": "5",
                     "value" : "p",
                     "name": "tam"
                 },
                 {
-                    "tam": "Mediana",
+                    "nombre": "Mediana 10€",
+                    "tam": "mediana",
                     "precio": "10",
                     "value" : "m",
                     "name": "tam"
                 },
                 {
-                    "tam": "Grande",
+                    "nombre": "Grande 15€",
+                    "tam": "grande",
                     "precio": "15",
                     "value" : "g",
                     "name": "tam"
@@ -24,28 +27,34 @@
 
             "ingredientes": [
                 {
+                    "id": "bacon",
                     "nombre": "Bacon",
                     "precio": "2"
                 },
                 {
+                    "id": "quesos",
                     "nombre": "4 Quesos",
                     "precio": "2"
                 },
                 {
+                    "id": "champi",
                     "nombre": "Champiñones",
                     "precio": "1"
                 },
                 {
+                    "id": "cebolla",
                     "nombre": "Cebolla",
                     "precio": "0.5"
                 },
                 {
+                    "id": "pollo",
                     "nombre": "Pollo",
                     "precio": "2"
                 },
                 {
-                    "nombre": "Huevo",
-                    "precio": "1"
+                    "id": "carne",
+                    "nombre": "Carne",
+                    "precio": "2"
                 }
             ]
         }
