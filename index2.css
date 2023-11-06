@@ -32,7 +32,7 @@ p{
 }
 
 #nombre{
-    margin-left:5px;
+    margin-left:18px;
     margin-bottom: 5px;
 }
 #direccion{
@@ -40,11 +40,11 @@ p{
     margin-bottom: 5px;
 }
 #telefono{
-    margin-left:5px;
+    margin-left: 14px;
     margin-bottom: 5px;
 }
 #email{
-    margin-left:5px;
+    margin-left: 38px;
     margin-bottom: 5px;
 }
 
@@ -65,4 +65,7 @@ p{
     margin-right:30px;
 }
 
-
+#procesar{
+    margin-top: 40px;
+    margin-right: 10px;
+}

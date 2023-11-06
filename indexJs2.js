@@ -98,6 +98,14 @@ function pizzaChecked() {
     return true;
 }
 
+
+
+
+
+
+
+
+/**
 //funcion validar si ingrediente esta checked
 function ingreChecked() {
     ingrePizza = document.getElementsByName("ingrediente");
@@ -114,6 +122,7 @@ function ingreChecked() {
     }
     return true;
 }
+
 
 //funcion calcular precio tamaño
 function calcPrecioTam() {
@@ -177,3 +186,4 @@ function procesarPedido() {
     }
 
 }
+*/
