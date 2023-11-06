@@ -20,6 +20,11 @@ form{
    margin-left: 22%;
 }
 
+p{
+    margin-bottom: 8px;
+}
+
+
 #enviar{
     background-color: firebrick;
     color: white;
@@ -47,3 +52,17 @@ form{
     font-size: 30px;
     font-family: Allura, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+#Pequeña{
+    margin-right:30px;
+}
+
+#Mediana{
+    margin-right:30px;
+}
+
+#Grande{
+    margin-right:30px;
+}
+
+

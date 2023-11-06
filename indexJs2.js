@@ -26,20 +26,18 @@ function procesarRespuesta(jsonDoc) {
     var tamaños = objetoJson.pizzeria.tamaños;
     var ingredientes = objetoJson.pizzeria.ingredientes;
     console.log(objetoJson)
-    console.log(tamaños)
 
 
     //Insertar datos modificando el DOM
-
-    let label = document.createElement("label")
-    label.for = "tam"
-    label.id = "tam"
-    let labelCont = document.createTextNode("Elige tu tamaño :")
-    label.appendChild(labelCont)
-    div.appendChild(label)
+    let pElige = document.createElement("p")
+    pElige.for = "tam"
+    let pEligeCont = document.createTextNode("Elige tu tamaño :")
+    pElige.appendChild(pEligeCont)
+    div.appendChild(pElige)
 
     for (let tamaño of tamaños) {
         let labelTam = document.createElement("label")
+        labelTam.id = "tam"
         let labelContTam = document.createTextNode(tamaño.tam)
         labelTam.appendChild(labelContTam)
         let inputTam = document.createElement("input")
@@ -47,11 +45,37 @@ function procesarRespuesta(jsonDoc) {
         inputTam.name = tamaño.name
         inputTam.id = tamaño.tam
         inputTam.value = tamaño.value
-        console.log(tamaños)
         div.appendChild(labelTam)
         div.appendChild(inputTam)
     }
+
+    let pElige2 = document.createElement("p")
+    pElige2.for = "ingre"
+    let pElige2Cont = document.createTextNode("Elige tus ingredientes :")
+    pElige2.appendChild(pElige2Cont)
+    div.appendChild(pElige2)
    
+    for (let ingrediente of ingredientes){
+        let labelIngre = document.createElement("label")
+        labelIngre.for = "pizzas"
+        let labelContIngre = document.createTextNode(ingrediente.nombre)
+        labelIngre.appendChild(labelContIngre)
+        let inputIngre = document.createElement("input")
+        inputIngre.name = ingrediente.nombre
+        inputIngre.type = "checkbox"
+        inputIngre.id = ingrediente.nombre
+        inputIngre.value = ingrediente.precio
+        inputIngre.style.marginRight = "28px";
+        div.appendChild(labelIngre)
+        div.appendChild(inputIngre)
+    }
+
+    
+
+
+
+
+
 }
 
 
