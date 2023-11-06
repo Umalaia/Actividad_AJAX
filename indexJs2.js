@@ -191,8 +191,10 @@ function procesarPedido() {
 
     let precioTamPizza = 0
     precioTamPizza = calcPrecioTam();
+    console.log(precioTamPizza)
     let precioIngre = 0
     precioIngre = calcPrecioIngrediente();
+    console.log(precioIngre)
 
 
     if (comprobarDatos() == true) {
@@ -209,12 +211,9 @@ function procesarPedido() {
 
 }
 
+//funcion refrescar la página limpiando los datos y haceindo de nuevo la llamada al servidor
 function refresca(){
-    let refresh = document.getElementById("refrescar");
-    refresh.addEventListener('click', _ => {
-                location.reload();
-    })
-
+    localStorage.clear()
+    location.reload()
+    window.onload = (enviarPeticionAsincrona)
 }
-
-
