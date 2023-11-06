@@ -64,12 +64,12 @@ function procesarRespuesta(jsonDoc) {
         inputIngre.name = "ingrediente"
         inputIngre.type = "checkbox"
         inputIngre.id = ingrediente.id
-        inputIngre.value = ingrediente.precio
+        inputIngre.value = ingrediente.value
         inputIngre.style.marginRight = "28px";
         div.appendChild(labelIngre)
         div.appendChild(inputIngre)
     }
-
+}
 
 
 
@@ -124,20 +124,61 @@ function calcPrecioTam() {
     }
 }
 
-//funcion calcular precio ingredientes
+
+//funcion calcular precio ingrediente
 function calcPrecioIngrediente() {
     let contador = 0
+    
     if(ingreChecked()){
-    for (let ingre of ingredientes){
-        let ingreChecked = document.getElementById(ingre.id)
-        contador += ingreChecked.value
-        console.log(contador)
-    }
-        return contador
+        if (bacon.checked){
+            parseInt(bacon.value)+contador
+        }
+        if (quesos.checked){
+            contador++
+        }
+        if (champi.checked){
+            contador++
+        }
+        if (cebolla.checked){
+            contador++
+        }
+        if (pollo.checked){
+            contador++
+        }
+        if (carne.checked){
+            contador++
+        }
+        let precioIngredientes = contador++
+        return precioIngredientes;
     }
 }
 
 
+/* funcion comprobar que los campos nombre, direccion, telefono y email esten rellenos
+   y si no, mostrar una alerta dependiendo del campo que no lo esté */
+function comprobarDatos(){
+     n = (nombre.value == "")
+     d = (direccion.value == "")
+     t = (telefono.value == "")
+     e = (email.value == "")
+    if (n){
+        alert("Inserta el nombre")
+    }
+    if (d){
+        alert("Inserta la direccion")
+    }
+    if (t){
+        alert("Inserta el telefono")
+    }
+    if (e){
+        alert("Inserta el email")
+    }
+    if(n == true || d == true || t == true || e == true){
+        return false
+    }
+    else
+        return true
+}
 
 
 //funcion procesar el pedido
@@ -164,4 +205,4 @@ function procesarPedido() {
 
 }
 
-}
+

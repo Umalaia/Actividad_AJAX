@@ -29,32 +29,32 @@
                 {
                     "id": "bacon",
                     "nombre": "Bacon",
-                    "precio": "2"
+                    "value": "2"
                 },
                 {
                     "id": "quesos",
                     "nombre": "4 Quesos",
-                    "precio": "2"
+                    "value": "2"
                 },
                 {
                     "id": "champi",
                     "nombre": "Champiñones",
-                    "precio": "1"
+                    "value": "1"
                 },
                 {
                     "id": "cebolla",
                     "nombre": "Cebolla",
-                    "precio": "0.5"
+                    "value": "0.5"
                 },
                 {
                     "id": "pollo",
                     "nombre": "Pollo",
-                    "precio": "2"
+                    "value": "2"
                 },
                 {
                     "id": "carne",
                     "nombre": "Carne",
-                    "precio": "2"
+                    "value": "2"
                 }
             ]
         }
