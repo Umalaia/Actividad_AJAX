@@ -1,0 +1,78 @@
+{
+    "Pizzas": {
+        "ingredientes":[
+            {
+                "for" : "Bacon",
+                "nam" : "ingrediente",
+                "id" : "bacon",
+                "precio" :  "2",
+                "type" : "checkbox"
+
+
+
+            }
+            ,
+            {
+                "for" : "Carne",
+                "nam" : "ingrediente",
+                "id" : "carne",
+                "precio" :  "2",
+                "type" : "checkbox"
+
+            }
+            ,
+            {
+                "for" : "Pollo",
+                "nam" : "ingrediente",
+                "id" : "pollo",
+                "precio" :  "2",
+                "type" : "checkbox"
+            }
+            ,
+            {
+                "for" : "Peperoni",
+                "nam" : "ingrediente",
+                "id" : "peperoni",
+                "precio" :  "2",
+                "type" : "checkbox"
+            }
+            ,
+            {
+                "for" : "Aguacate",
+                "nam" : "ingrediente",
+                "id" : "aguacate",
+                "precio" :  "4",
+                "type" : "checkbox"
+            }
+            
+        ]
+        ,
+        "tamaño":[
+            {
+                "text" : "Tamaño pequeño 5€",
+                "id" : "pequeña",
+                "nombre" : "tamaño",
+                "precio" :  "5",
+                "type"   : "radio"
+            }
+            ,
+            {
+                 "text": "Tamaño mediano 10€",   
+                "id": "pequeña",
+                "nombre" : "tamaño",
+                "precio" :  "10",
+                "type"   : "radio"
+            }
+            ,
+            {
+                "text": "Tamaño grande 15€",
+                "id" : "grande",
+                "nombre" : "tamaño",
+                "precio" :  "15",
+                "type"   : "radio"
+            }
+
+        ]
+
+    }
+}
