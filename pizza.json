@@ -1,0 +1,44 @@
+{
+    "pizzeria": {
+        "tamaños": [
+            {
+                "Medida" : "Pequeña",
+                "Precio" : "5"
+            },
+            {
+                "Medida" : "Mediana",
+                "Precio" : "10"
+            },
+            {
+                "Medida" : "Grande",
+                "Precio" : "15"
+            }
+        ],
+        "ingredientes": [
+            {
+                "Nombre" : "Pepperoni",
+                "Precio" : "1"
+            },
+            {
+                "Nombre" : "Bacon",
+                "Precio" : "2"
+            },
+            {
+                "Nombre" : "Piña",
+                "Precio" : "3"
+            },
+            {
+                "Nombre" : "Anchoas",
+                "Precio" : "4"
+            },
+            {
+                "Nombre" : "Huevo",
+                "Precio" : "5"
+            },
+            {
+                "Nombre" : "Pollo",
+                "Precio" : "6"
+            }
+        ]
+    }
+}
