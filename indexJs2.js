@@ -127,9 +127,8 @@ function calcPrecioTam() {
 
 
 //funcion calcular precio ingrediente
-function calcPrecioIngrediente() {
+/*function calcPrecioIngrediente() {
     let contador = 0
-    
     if(ingreChecked()){
         if (bacon.checked){
             contador += parseInt(bacon.value)
@@ -156,7 +155,19 @@ function calcPrecioIngrediente() {
         return precioIngredientes;
     }
 }
+*/
 
+function calcPrecioIngrediente() {
+    let precioIngredientes = 0
+    let ingredientes = document.getElementsByName("ingredientes")
+    for (ingre of ingredientes){
+        if(ingreChecked()){
+            if(ingre.checked){
+                precioIngredientes+=parseInt(ingre.value)
+            }
+        }
+    }
+}
 
 /* funcion comprobar que los campos nombre, direccion, telefono y email esten rellenos
    y si no, mostrar una alerta dependiendo del campo que no lo esté */
