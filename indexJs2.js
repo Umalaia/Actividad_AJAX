@@ -3,14 +3,19 @@ window.onload = (enviarPeticionAsincrona);
 const URL_DESTINO = "http://localhost:5500/"
 const RECURSO = "pizzas.json"
 
+let botonRef = document.getElementById("refrescar")
+
+botonRef.addEventListener("click", enviarPeticionAsincrona)
+
+//Obtenemos los datos del JSON Y de paso limpiamos los tamaños y los ingredientes para evitar que se dupliquen
     function enviarPeticionAsincrona() {
-        var tas = document.getElementById("size")
-        var liao = document.getElementById("liao")
-        while(tas.firstChild){
-            tas.removeChild(tas.firstChild)
+        var tamano = document.getElementById("size")
+        var ing = document.getElementById("liao")
+        while(tamano.firstChild){
+            tamano.removeChild(tamano.firstChild)
         }
-        while(liao.firstChild){
-            liao.removeChild(liao.firstChild)
+        while(ing.firstChild){
+            ing.removeChild(ing.firstChild)
         }
 
         let xmlHttp = new XMLHttpRequest()
@@ -18,7 +23,7 @@ const RECURSO = "pizzas.json"
         xmlHttp.onreadystatechange = function () {
             if (this.readyState == 4){
                 if (this.status == 200) {
-                    procesarRespuesta(this.responseText)//Obtenemos el valor en texto
+                    procesarRespuesta(this.responseText)
                 } else {
                     alert("Error!")
                 }
@@ -30,7 +35,7 @@ const RECURSO = "pizzas.json"
     }
    
     function procesarRespuesta(jsonDoc) {
-        //Limpieza de elementos anteriores
+        
         var tas = document.getElementById("size")
         var liao = document.getElementById("liao")
         while(tas.firstChild){
@@ -204,7 +209,5 @@ function procesarPedido() {
     }
 
     
-    let botonRef = document.getElementById("refrescar")
-
-    botonRef.addEventListener("click",enviarPeticionAsincrona)
+    
 }
