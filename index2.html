@@ -26,44 +26,24 @@
                 <label for ="email">Email: </label>
                 <input id="email" name="email" type="email" placeholder="example@gmail.com" required/>
                 </br></br>
-                <div id = "size">
+               
                 <span id="tamaño">Elige tu tamaño: </span>
                 </br>
+                <div id = "size">
                 </div>
-                <!--
-                </br>
-                <label>5€ - Pequeña (20cm)</label>
-                <input name="tamaño" type="radio" value="p" id="pequeña"/>
-                </br>
-                <label>10€ - Mediana (25cm)</label>
-                <input name="tamaño" type="radio" value="m" id="mediana"/>
-                </br>
-                <label>15€ - Familiar (33cm)</label>
-                <input name="tamaño" type="radio" value="g" id="grande"/>
-                 -->
+             
                 </br></br>
-               <div id = "liao">
+              
                 <span id="pizzas">Elige tus ingredientes:
                     <br> *(Todas las pizzas vienen acompañadas de queso, cebolla y pimiento)
+
                 </span>
-                </br>
+            <div id = "liao">
              </div>
-                <!--
-                <label>Bacon</label>
-                <input name = "ingrediente" id ="bacon" type="checkbox" value="bacon"/>
-                </br>
-                <label>Carne picada</label>
-                <input name = "ingrediente" id ="carne" type="checkbox" value="quesos" alt="carne"/>
-                </br>
-                <label>Pollo</label>
-                <input name = "ingrediente" id ="pollo" type="checkbox" value="hawaiana" alt="pollo"/>
-                </br>
-                <label>Pepperoni</label>
-                <input name = "ingrediente" id ="peperoni" type="checkbox" value="peperoni" alt="pepperoni"/>
-                -->
+              
                 </br></br>
                 <button type="button" id="procesar" onclick="procesarPedido()">PROCESAR PEDIDO</button> <!--button con funcion procesar dentro de el -->
-                <button type="button" id="refrescar" onclick="comprobarRefresco()">REFRESH</button>
+                <button type="button" id="refrescar" onclick="enviarPeticionAsincrona()">REFRESH</button>
                 <p id="precio"> </p>
         </form>
     </div>

@@ -57,6 +57,7 @@
         ,
         "tamaño":[
             {
+                "for" : "pequeña",
                 "text" : "Tamaño pequeño 5€",
                 "id" : "pequeña",
                 "nombre" : "tamaño",
@@ -65,6 +66,7 @@
             }
             ,
             {
+                "for": "mediana",
                  "text": "Tamaño mediano 10€",   
                 "id": "mediana",
                 "nombre" : "tamaño",
@@ -73,12 +75,14 @@
             }
             ,
             {
+                "for": "grande",
                 "text": "Tamaño grande 15€",
                 "id" : "grande",
                 "nombre" : "tamaño",
                 "precio" :  "15",
                 "type"   : "radio"
             }
+           
 
         ]
 

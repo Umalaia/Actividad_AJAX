@@ -1,10 +1,17 @@
 window.onload = (enviarPeticionAsincrona);
 //FUNCIONES
-const URL_DESTINO = "http://localhost:5500/Actividad_AJAX/"
+const URL_DESTINO = "http://localhost:5500/"
 const RECURSO = "pizzas.json"
 
     function enviarPeticionAsincrona() {
-        console.log("hola")
+        var tas = document.getElementById("size")
+        var liao = document.getElementById("liao")
+        while(tas.firstChild){
+            tas.removeChild(tas.firstChild)
+        }
+        while(liao.firstChild){
+            liao.removeChild(liao.firstChild)
+        }
 
         let xmlHttp = new XMLHttpRequest()
 
@@ -23,25 +30,34 @@ const RECURSO = "pizzas.json"
     }
    
     function procesarRespuesta(jsonDoc) {
-        console.log("he entrado")
+        //Limpieza de elementos anteriores
+        var tas = document.getElementById("size")
+        var liao = document.getElementById("liao")
+        while(tas.firstChild){
+            tas.removeChild(tas.firstChild)
+        }
+        while(liao.firstChild){
+            liao.removeChild(liao.firstChild)
+        }
+        
+
         var objetoJson = JSON.parse(jsonDoc)
         var sizes = objetoJson.Pizzas.tamaño
         var ingredientes = objetoJson.Pizzas.ingredientes
-        var tas = document.getElementById("size")
-        var liao = document.getElementById("liao")
+       
         console.log(sizes)
         console.log(ingredientes)
         for(tama of sizes){
             
-            let lab = document.createElement('label')
-            lab.for = tama.nombre
+            var lab = document.createElement("label")
+            lab.for = tama.for
             let textolab =  document.createTextNode(tama.text)
             lab.appendChild(textolab)//Añadimos texto al label
             tas.appendChild(lab)//Añadimos el lab al div
             
             let inp = document.createElement("input")
             
-            inp.value = tama.id
+            inp.value = tama.precio
             inp.type = tama.type
             inp.name = tama.nombre
             inp.id = tama.id
@@ -53,7 +69,7 @@ const RECURSO = "pizzas.json"
         for(ing of ingredientes){
             console.log("Estoy en ingredientes")
             let lab2 = document.createElement('label')
-            lab2.for = ing.id
+            lab2.for = ing.for
             let textoLab2 = document.createTextNode(ing.for)
             lab2.appendChild(textoLab2)
             liao.appendChild(lab2)
@@ -68,14 +84,6 @@ const RECURSO = "pizzas.json"
         }
         
     }
-
-
-    
-
-
-
-
-
 
 //funcion validar si tamaño esta checked
 function pizzaChecked() {
@@ -114,15 +122,15 @@ function ingreChecked() {
 //funcion calcular precio tamaño
 function calcPrecioTam() {
     let precioPizza = 0;
-    
+    let tamaMarcado = document.getElementsByName("tamaño")
     if (pizzaChecked()) {
-        if (pequeña.checked) {
-            precioPizza = 5
-        } else if (mediana.checked) {
-            precioPizza = 10
-        } else if (grande.checked) {
-            precioPizza = 15
+        for(tamanio of tamaMarcado){
+            if (tamanio.checked == true){
+                intPrecio = parseInt(tamanio.value)
+                precioPizza = intPrecio
+            }
         }
+       
         return precioPizza;
     }
 }
@@ -142,23 +150,6 @@ function calcPrecioIngrediente() {
     }
     return contador
     
-    /*
-    if(ingreChecked()){
-        if (bacon.checked){
-            contador++
-        }
-        if (carne.checked){
-            contador++
-        }
-        if (pollo.checked){
-            contador++
-        }
-        if (peperoni.checked){
-            contador++
-        }
-        let precioIngredientes = contador++
-        return precioIngredientes;
-    }*/
 }
 
 /* funcion comprobar que los campos nombre, direccion, telefono y email esten rellenos
@@ -211,5 +202,9 @@ function procesarPedido() {
     precio.style.display = "none"
     
     }
+
     
+    let botonRef = document.getElementById("refrescar")
+
+    botonRef.addEventListener("click",enviarPeticionAsincrona)
 }
