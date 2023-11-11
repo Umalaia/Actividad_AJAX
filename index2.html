@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="indexJs2.js"></script>
+    <link rel="stylesheet" href="index2.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bangers&family=Edu+NSW+ACT+Foundation&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Bangers&family=Cormorant+Garamond:wght@300&family=EB+Garamond:ital@1&family=Edu+NSW+ACT+Foundation&family=Josefin+Slab:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1>Pizzeria Mamma Mia</h1>
+        <form action="procesar.jsp" method="get" id="formulario">
+                <label for ="nombre">Nombre: </label>
+                <input id="nombre" name="nombre" type="text" placeholder="Introduce tu nombre" required/>
+                </br>
+                <label for ="direccion">Dirección: </label>
+                <input id="direccion" name="direccion" type="text" placeholder="Introduce tu direccion" required/>
+                </br>
+                <label for ="telefono">Teléfono: </label>
+                <input id="telefono" name="telefono" type="tel" placeholder="Introduce tu telefono" required/>
+                </br>
+                <label for ="email">Email: </label>
+                <input id="email" name="email" type="email" placeholder="example@gmail.com" required/>
+                </br></br>
+                <div id="div"></div>
+                <!--
+                <label for="tamaño" id="tamaño">Elige tu tamaño: </label>
+                </br>
+                <label>5€ - Pequeña (20cm)</label>
+                <input name="tamaño" type="radio" value="p" id="pequeña"/>
+                </br>
+                <label>10€ - Mediana (25cm)</label>
+                <input name="tamaño" type="radio" value="m" id="mediana"/>
+                </br>
+                <label>15€ - Familiar (33cm)</label>
+                <input name="tamaño" type="radio" value="g" id="grande"/>
+                </br></br>
+                <label for="pizzas">Elige tus ingredientes:
+                    <br> *(Todas las pizzas vienen acompañadas de queso, cebolla y pimiento)
+                </label>
+                </br>
+                <label>Bacon</label>
+                <input name = "ingrediente" id ="bacon" type="checkbox" value="bacon"/>
+                </br>
+                <label>Carne picada</label>
+                <input name = "ingrediente" id ="carne" type="checkbox" value="quesos" alt="carne"/>
+                </br>
+                <label>Pollo</label>
+                <input name = "ingrediente" id ="pollo" type="checkbox" value="hawaiana" alt="pollo"/>
+                </br>
+                <label>Pepperoni</label>
+                <input name = "ingrediente" id ="peperoni" type="checkbox" value="peperoni" alt="pepperoni"/>
+                </br></br>
+                -->
+                <button type="button" id="procesar" onclick="procesarPedido()">PROCESAR PEDIDO</button> 
+                <button type="button" id="refrescar" onclick="refresca()">REFRESCAR</button> 
+                <p id="precio"> </p>
+                
+        </form>
+    </div>
+</body>
+</html>

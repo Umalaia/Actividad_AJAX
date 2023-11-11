@@ -1,0 +1,71 @@
+body{
+    background-color: firebrick;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Cormorant Garamond, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    background-image: url("img2/pizza.jpg");
+    background-size: cover;
+}
+
+h1{
+    font-family: Allura , Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 22%;
+    margin-top: 4%;
+    font-size: 55px;
+}
+
+form{
+   margin-left: 22%;
+}
+
+p{
+    margin-bottom: 8px;
+}
+
+
+#enviar{
+    background-color: firebrick;
+    color: white;
+    font-size: 16px;
+}
+
+#nombre{
+    margin-left:18px;
+    margin-bottom: 5px;
+}
+#direccion{
+    margin-left:5px;
+    margin-bottom: 5px;
+}
+#telefono{
+    margin-left: 14px;
+    margin-bottom: 5px;
+}
+#email{
+    margin-left: 38px;
+    margin-bottom: 5px;
+}
+
+#precio{
+    font-size: 30px;
+    font-family: Allura, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#pequeña{
+    margin-right:35px;
+}
+
+#mediana{
+    margin-right:35px;
+}
+
+#grande{
+    margin-right:35px;
+}
+
+#procesar{
+    margin-top: 40px;
+    margin-right: 10px;
+}
