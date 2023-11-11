@@ -127,7 +127,7 @@ function calcPrecioTam() {
 
 
 //funcion calcular precio ingrediente
-function calcPrecioIngrediente() {
+/*function calcPrecioIngrediente() {
     let contador = 0
     
     if(ingreChecked()){
@@ -154,6 +154,18 @@ function calcPrecioIngrediente() {
        
         let precioIngredientes = contador
         return precioIngredientes;
+    }
+}
+*/
+function calcPrecioIngrediente() {
+    let precioIngredientes = 0
+    let ingredientes = document.getElementsByName("ingrediente")
+    for (ingre of ingredientes) {
+        if (ingreChecked()) {
+            if (ingre.checked) {
+                precioIngredientes += parseInt(ingre.value)
+            }
+        }
     }
 }
 
