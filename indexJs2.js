@@ -1,6 +1,6 @@
 window.onload = (enviarPeticionAsincrona);
 //FUNCIONES
-const URL_DESTINO = "http://localhost:5500/"
+const URL_DESTINO = "http://localhost:5500/Actividad_AJAX/"
 const RECURSO = "pizzas.json"
 
     function enviarPeticionAsincrona() {
@@ -9,7 +9,7 @@ const RECURSO = "pizzas.json"
         let xmlHttp = new XMLHttpRequest()
 
         xmlHttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
+            if (this.readyState == 4){
                 if (this.status == 200) {
                     procesarRespuesta(this.responseText)//Obtenemos el valor en texto
                 } else {
@@ -21,25 +21,7 @@ const RECURSO = "pizzas.json"
         xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
         xmlHttp.send(null)
     }
-    function enviarPeticionAsincrona2() {
-        console.log("hola")
-
-        let xmlHttp = new XMLHttpRequest()
-
-        xmlHttp.onreadystatechange = function () {
-            if (this.readyState == 4) {
-                if (this.status == 200) {
-                    procesarRespuesta2(this.responseText)//Obtenemos el valor en texto
-                } else {
-                    alert("Error!")
-                }
-            }
-        }
-
-        xmlHttp.open('GET', URL_DESTINO + RECURSO, true)
-        xmlHttp.send(null)
-    }
-
+   
     function procesarRespuesta(jsonDoc) {
         console.log("he entrado")
         var objetoJson = JSON.parse(jsonDoc)
@@ -59,7 +41,7 @@ const RECURSO = "pizzas.json"
             
             let inp = document.createElement("input")
             
-            inp.value = tama.precio
+            inp.value = tama.id
             inp.type = tama.type
             inp.name = tama.nombre
             inp.id = tama.id
@@ -67,12 +49,11 @@ const RECURSO = "pizzas.json"
             tas.appendChild(inp)    
         }
 
-        var i = 0
-        while(i<ingredientes.length){
-            let ing = ingredientes[i]
+        
+        for(ing of ingredientes){
             console.log("Estoy en ingredientes")
             let lab2 = document.createElement('label')
-            lab2.for = ing.for
+            lab2.for = ing.id
             let textoLab2 = document.createTextNode(ing.for)
             lab2.appendChild(textoLab2)
             liao.appendChild(lab2)
@@ -83,17 +64,12 @@ const RECURSO = "pizzas.json"
             inp2.type = ing.type
             inp2.name = ing.nam
             liao.appendChild(inp2)
-            i++     
+           
         }
         
     }
 
-    function refresco(){
 
-        
-
-    }
-    
     
 
 
@@ -138,6 +114,7 @@ function ingreChecked() {
 //funcion calcular precio tamaño
 function calcPrecioTam() {
     let precioPizza = 0;
+    
     if (pizzaChecked()) {
         if (pequeña.checked) {
             precioPizza = 5
@@ -150,33 +127,22 @@ function calcPrecioTam() {
     }
 }
 
-function procesarRespuesta2(jsonDoc) {
-    var objetoJson = JSON.parse(jsonDoc)
-    var ingredientes = objetoJson.Pizzas.ingredientes
-    let cuenta = 0
-    let precio = 0
-   
-function calcPrecioIngrediente(){
-    for(ing of ingredientes){
-        let ingre = document.createElement('input')
-        ingre = document.getElementById(ing.id)
-        if(ingre.checked == true){
-            precio = parseInt(ingre.precio)
-            cuenta += precio
-        }
-    }
-    console.log(cuenta)
-    return cuenta
-
-
-}
-}
-/*
 
 //funcion calcular precio ingredientes
 function calcPrecioIngrediente() {
     let contador = 0
+    let ingres = document.getElementsByName("ingrediente")
+    if(ingreChecked()){
+        for(ing of ingres){
+            if(ing.checked){
+                let intIng = parseInt(ing.value)
+                contador+=intIng
+            }
+        }
+    }
+    return contador
     
+    /*
     if(ingreChecked()){
         if (bacon.checked){
             contador++
@@ -192,9 +158,9 @@ function calcPrecioIngrediente() {
         }
         let precioIngredientes = contador++
         return precioIngredientes;
-    }
+    }*/
 }
-*/
+
 /* funcion comprobar que los campos nombre, direccion, telefono y email esten rellenos
    y si no, mostrar una alerta dependiendo del campo que no lo esté */
 function comprobarDatos(){
@@ -229,7 +195,7 @@ function procesarPedido() {
     let precioTamPizza = 0
     precioTamPizza = calcPrecioTam();
     let precioIngre = 0
-    precioIngre = procesarRespuesta2();
+    precioIngre = calcPrecioIngrediente();
     
 
     if (comprobarDatos() == true){
@@ -239,6 +205,7 @@ function procesarPedido() {
     nuevoPrecio.appendChild(precioTotal)
     nuevoPrecio.id = "precio"
     formulario.appendChild(nuevoPrecio)
+    precio.style.display = "block"
     }
     else{
     precio.style.display = "none"
