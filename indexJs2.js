@@ -128,32 +128,16 @@ function calcPrecioTam() {
 
 //funcion calcular precio ingrediente
 function calcPrecioIngrediente() {
-    let contador = 0
-    if(ingreChecked()){
-        if (bacon.checked){
-            contador += parseInt(bacon.value)
-            
+    let precioIngredientes = 0
+    let ingredientes = document.getElementsByName("ingrediente")
+    for (ingre of ingredientes) {
+        if (ingreChecked()) {
+            if (ingre.checked) {
+                precioIngredientes+=parseInt(ingre.value)
+                console.log(precioIngredientes)
+            }
         }
-        if (quesos.checked){
-            contador += parseInt(quesos.value)
- 
-        }
-        if (champi.checked){
-            contador += parseInt(champi.value)
-        }
-        if (cebolla.checked){
-            contador += parseInt(cebolla.value)
-        }
-        if (pollo.checked){
-            contador += parseInt(pollo.value)
-        }
-        if (carne.checked){
-            contador += parseInt(carne.value)
-        }
-       
-        let precioIngredientes = contador
-        return precioIngredientes;
-    }
+    }return precioIngredientes
 }
 
 
