@@ -42,7 +42,7 @@ function procesarRespuesta(jsonDoc) {
         let labelContTam = document.createTextNode(tamaño.nombre)
         labelTam.appendChild(labelContTam)
         let inputTam = document.createElement("input")
-        inputTam.type="radio"
+        inputTam.type = "radio"
         inputTam.name = "tamaño"
         inputTam.id = tamaño.tam
         inputTam.value = tamaño.value
@@ -55,8 +55,8 @@ function procesarRespuesta(jsonDoc) {
     let pElige2Cont = document.createTextNode("Elige tus ingredientes :")
     pElige2.appendChild(pElige2Cont)
     div.appendChild(pElige2)
-   
-    for (let ingrediente of ingredientes){
+
+    for (let ingrediente of ingredientes) {
         let labelIngre = document.createElement("label")
         labelIngre.for = "pizzas"
         let labelContIngre = document.createTextNode(ingrediente.nombre)
@@ -127,7 +127,7 @@ function calcPrecioTam() {
 
 
 //funcion calcular precio ingrediente
-/*function calcPrecioIngrediente() {
+function calcPrecioIngrediente() {
     let contador = 0
     if(ingreChecked()){
         if (bacon.checked){
@@ -155,43 +155,30 @@ function calcPrecioTam() {
         return precioIngredientes;
     }
 }
-*/
 
-function calcPrecioIngrediente() {
-    let precioIngredientes = 0
-    let ingredientes = document.getElementsByName("ingredientes")
-    for (ingre of ingredientes){
-        if(ingreChecked()){
-            if(ingre.checked){
-                precioIngredientes+=parseInt(ingre.value)
-            }
-        }
-    }
-}
 
 /* funcion comprobar que los campos nombre, direccion, telefono y email esten rellenos
    y si no, mostrar una alerta dependiendo del campo que no lo esté */
-function comprobarDatos(){
-     n = (nombre.value == "")
-     d = (direccion.value == "")
-     t = (telefono.value == "")
-     e = (email.value == "")
-    if (n){
+function comprobarDatos() {
+    n = (nombre.value == "")
+    d = (direccion.value == "")
+    t = (telefono.value == "")
+    e = (email.value == "")
+    if (n) {
         alert("Inserta el nombre")
     }
-    if (d){
+    if (d) {
         alert("Inserta la direccion")
     }
-    if (t){
+    if (t) {
         alert("Inserta el telefono")
     }
-    if (e){
+    if (e) {
         alert("Inserta el email")
     }
-    if(n == true || d == true || t == true || e == true){
+    if (n == true || d == true || t == true || e == true) {
         return false
-    }
-    else
+    } else
         return true
 }
 
@@ -223,7 +210,7 @@ function procesarPedido() {
 }
 
 //funcion refrescar la página limpiando los datos y haceindo de nuevo la llamada al servidor
-function refresca(){
+function refresca() {
     localStorage.clear()
     location.reload()
     window.onload = (enviarPeticionAsincrona)
